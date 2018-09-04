@@ -12,6 +12,9 @@ import { HomeComponent } from './components/home/home.component';
 
 // Services
 import { GlobalService } from './services/global.service';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { UserComponent } from './components/user/user.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { GlobalService } from './services/global.service';
     FooterComponent,
     NavBarComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SideBarComponent,
+    UserComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
