@@ -1,6 +1,4 @@
 <div>
-    <app-nav-bar *ngIf="this.global.isUserAuthenticated == 'true'"></app-nav-bar>
     <router-outlet *ngIf="this.global.isUserAuthenticated == 'false'"></router-outlet>
-    <app-footer *ngIf="this.global.isUserAuthenticated == 'true'"></app-footer>
 </div>
 
