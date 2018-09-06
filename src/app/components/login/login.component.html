@@ -6,10 +6,12 @@
     <label for="inputEmail" class="sr-only" >Email address</label>
     <input type="email" class="form-control" [formControl]="loginForm.controls['email']" placeholder="Email address" required autofocus>
 
-      <p *ngIf="loginForm.controls['isInvalid'].value">이메일 혹은 비밀번호가 틀립니다.</p>
+    <p *ngIf="loginForm.controls['email'].touched && !loginForm.controls['email'].valid">유효한 이메일을 입력하세요.</p>
 
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" class="form-control" [formControl]="loginForm.controls['password']" placeholder="Password" required>
+
+    <p *ngIf="loginForm.controls['password'].touched && !loginForm.controls['password'].valid">영문, 숫자, 특수문자(. , - 제외)를 포함한 8~20자리로 설정하세요.</p>
 
     <div class="checkbox mb-3">
       <label>
