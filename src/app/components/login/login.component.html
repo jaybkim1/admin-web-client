@@ -1,16 +1,15 @@
 <section class="text-center">
-  <!-- form 으로 꼭 안해도 될 것 같다. angular directive 로 하면 되서... -->
-  <form class="form-signin">
-
+  <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
     <img class="mb-4" src="../../../assets/images/thumbnail_admin.png" alt="" width="72" height="72">
-
     <h1 class="h3 mb-3 font-weight-normal">Admin Sign In</h1>
 
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <label for="inputEmail" class="sr-only" >Email address</label>
+    <input type="email" class="form-control" [formControl]="loginForm.controls['email']" id="inputEmail" placeholder="Email address" required autofocus>
     
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <input type="password" class="form-control" [formControl]="loginForm.controls['password']" id="inputPassword" placeholder="Password" required>
+
+    <p *ngIf="loginForm.controls['isInvalid'].value">Email or Password is incorrect.</p>
 
     <div class="checkbox mb-3">
       <label>
@@ -20,6 +19,20 @@
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
-
   </form>
 </section>
+
+<!-- 
+  <main>
+  <div class="inner wbw-login">
+    <h3>로그인</h3>
+    <form class="wbw-login-form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+      <input type="text" placeholder="이메일 입력" [formControl]="loginForm.controls['email']">
+      <input type="password" placeholder="비밀번호 입력" [formControl]="loginForm.controls['password']">
+      <p *ngIf="loginForm.controls['isInvalid'].value">이메일 혹은 비밀번호가 틀립니다.</p>
+      <button type="submit" [disabled]="loginForm.invalid">로그인</button>
+    </form>
+    <p><a [routerLink]="['/register']">회원가입</a><span>|</span><a [routerLink]="['/pwd-find']">비밀번호 찾기</a></p>
+  </div>
+</main> 
+-->

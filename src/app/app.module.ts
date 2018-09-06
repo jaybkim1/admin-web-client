@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 // Components
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -20,7 +19,6 @@ import { ContactComponent } from './components/contact/contact.component';
   declarations: [
     AppComponent,
     FooterComponent,
-    NavBarComponent,
     LoginComponent,
     HomeComponent,
     SideBarComponent,
